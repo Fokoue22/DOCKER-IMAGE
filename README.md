@@ -94,10 +94,10 @@ sudo su - ec2-user
 ```
 ![Alt text](images/html-in-ec2instance.png)
 
-### 4. After writing our Dockerfile use the syntax below that will allow us to build an image based on our Dockerfile
+### 4. After writing and placing our Dockerfile in our linux-server let use the syntax below that will allow us to build an image based on our Dockerfile
 
 ```
- docker build PATH -t image_tag:image_version
+ docker build -t linux_apache:v1 .
 ```
 ### 4. Here we are going to create a container base on our "image" and start that container 
 #### We are running and application that is inside the conatainer, we are not directly running the application reason for us to create a port were we can asses our application externaly. "The port need to be outside and inside of the container. So we use "-p(for port) the first 80(for inside) and the other 80(for outside)"

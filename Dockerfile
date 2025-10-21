@@ -1,18 +1,18 @@
  # specifying the base image 
-FROM centos:7 
+FROM amazonlinux:2023
 
 # discripe the function of your image
 LABEL description="Building this image for Apache containers"
 LABEL maintainer="Fokoue"
 
 # Executing the command to upddate the package linux operating system
-RUN yum -y update
+RUN dnf -y update
 
 #Executing the command to install httpd (Apache web server)
-RUN yum -y install httpd
+RUN dnf -y install httpd
 
 # copying the index file from local into the container at a specified destination
-COPY index.html /var/www/html/
+COPY index.html /var/www/html
 
 EXPOSE 80
 
