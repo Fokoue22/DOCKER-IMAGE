@@ -94,7 +94,7 @@ sudo su - ec2-user
 ```
 ![Alt text](images/html-in-ec2instance.png)
 
-### 4. After writing and placing our Dockerfile in our linux-server let use the syntax below that will allow us to build an image based on our Dockerfile
+### 5. After writing and placing our Dockerfile in our linux-server let use the syntax below that will allow us to build an image based on our Dockerfile
 
 ```
  docker build -t linux_apache:v1 .
@@ -104,22 +104,42 @@ sudo su - ec2-user
 ```
 ![Alt text](images/docker-images.png)
 
-### 4. Here we are going to create a container base on our "image" and start that container 
+### 6. Here we are going to create a container base on our "image" and start that container 
 #### We are running and application that is inside the conatainer, we are not directly running the application reason for us to create a port were we can asses our application externaly. "The port need to be outside and inside of the container. So we use "-p(for port) the first 80(for inside) and the other 80(for outside)". Using the "-d" is to make your conatiner run on ditache mood 
 ```
  docker run -t -d -p 80:80 linux_apache:v1
 ```
 ![Alt text](images/docker-container.png)
 
-### 4. View the docker container on the website using the public ip of our linux-server
+### 7. View the docker container on the website using the public ip of our linux-server
 
 ![Alt text](images/website-view.png)
 
+### 7. Now let share our docker image to Docker Hub 
+- First thing we need to login into our docker hub account with our user name and password. 
+```
+ docker login
+```
+![Alt text](images/login-dockerHub.png)
 
+- We need to tag our image so that we can place it in our Docker Hub account. We tag the image with the image_id of that image we want to send to our account.  
+```
+ docker images
+```
+```
+ docker tag image_id fokoue/linux_apache:v1
+```
+![Alt text](images/tag-images.png)
 
+- Let publish(push) the image to our repository   
+```
+ docker push image_id fokoue/linux_apache:v1
+```
+![Alt text](images/docker-push.png)
 
+- Let view the push in our Docker Hub    
 
-
+![Alt text](images/docker-push.png)
 
 ## Author
 FOKOUE THOMAS
