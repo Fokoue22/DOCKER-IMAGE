@@ -1,10 +1,38 @@
 # DOCKER-IMAGE
-This repository contains docker images 
 
-## Setup an Ansible cluster with the controller running on Amazon Linux 2 and the 4 nodes in which 2 running on Amazon linux and 2 running on ubuntu.
+# 🐳 Dockerized Web Application 
+This project demonstrates how to package and deploy a web application using Docker for consistent and reliable deployment across any operating system.
 
 ![Alt text](images/docker-architecture.png)
 
+🚀 Project Overview
+
+Developer Stage:
+The developer creates the application (e.g., index.html) along with its dependencies.
+
+Packaging Stage:
+The app and its dependencies are packaged together in a Docker image, ensuring everything needed to run the application is included.
+
+Deployment Stage:
+Using Docker, the packaged application can be shipped and deployed to production, regardless of the underlying operating system or environment.
+
+🧩 Key Features
+
+Simplifies app deployment using containerization
+
+Ensures consistent environments from development to production
+
+Eliminates “works on my machine” issues
+
+Easily portable across OS platforms
+
+🛠️ Technologies Used
+
+Docker
+
+HTML/CSS/JavaScript (example static web app)
+
+Linux base image (amazonlinux:2023/CentOS/Alpine/Ubuntu)
 
 # STEPS BY STEPS PROCESS 
 
