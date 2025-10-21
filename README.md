@@ -54,26 +54,23 @@ sudo su - ec2-user
 ![Alt text](images/docker-install-1.png)
 ![Alt text](images/docker-install-2.png)
 
-- Take up you privilage. the first command for ubuntu and the second for linux. 
+
+### 3. Run our first container hello-word
 ```
-sudo su - ubuntu
-```
-```
-sudo su - ec2-user
-```
-### 8. Run ansible-playbook-project1.yml file
-- First thing to do is to create this path "/root/web/index.html" for our index.html file on the controller, so we must have that file before running your playbook
-```
- sudo mkdir -p /root/web
- echo "<h1>Hello from Ansible</h1>" | sudo tee /root/web/index.html
+ docker run hello-world
 
 ```
-- The playbook need to be run in the controller as a root user 
+- Then verify our conatainer with  
 ```
- vi ansible-playbook-project1.yml
+ docker ps
 ```
 ![Alt text](images/ansible-playbook.png)
-#### Don't forget to update the host name with name present in your inventory file. 
+#### Nothing is been showing after runing the command docker ps because container a effermero. So we need to use the command below to be able to see or specified the port to keep the conatiner up at all time
+```
+ docker ps -a
+```
+![Alt text](images/ansible-playbook.png)
+
 - Then you run the command below to for ansible to run your playbook 
 ```
  ansible-playbook ansible-playbook-project1.yml
