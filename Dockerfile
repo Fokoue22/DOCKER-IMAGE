@@ -1,4 +1,4 @@
-# specifying the base image 
+ # specifying the base image 
 FROM centos:7 
 
 # discripe the function of your image
