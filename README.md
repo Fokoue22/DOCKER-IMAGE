@@ -99,16 +99,21 @@ sudo su - ec2-user
 ```
  docker build -t linux_apache:v1 .
 ```
-### 4. Here we are going to create a container base on our "image" and start that container 
-#### We are running and application that is inside the conatainer, we are not directly running the application reason for us to create a port were we can asses our application externaly. "The port need to be outside and inside of the container. So we use "-p(for port) the first 80(for inside) and the other 80(for outside)"
 ```
- docker run -t -i -p 80:80 image_tag:image_version
+ docker images
 ```
-### 4. 
-```
- docker run -t -i p 80:80 image_tag:image_version
-```
+![Alt text](images/docker-images.png)
 
+### 4. Here we are going to create a container base on our "image" and start that container 
+#### We are running and application that is inside the conatainer, we are not directly running the application reason for us to create a port were we can asses our application externaly. "The port need to be outside and inside of the container. So we use "-p(for port) the first 80(for inside) and the other 80(for outside)". Using the "-d" is to make your conatiner run on ditache mood 
+```
+ docker run -t -d -p 80:80 linux_apache:v1
+```
+![Alt text](images/docker-container.png)
+
+### 4. View the docker container on the website using the public ip of our linux-server
+
+![Alt text](images/website-view.png)
 
 
 
