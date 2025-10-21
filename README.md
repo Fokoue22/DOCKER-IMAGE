@@ -109,7 +109,7 @@ sudo su - ec2-user
 ```
  cat Dockerfile
 ```
-#### When you run the "vim" command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
+#### When you run the "vim" command above first thing to do is to press the "i" for insert. Then past your 'Dckerfile content" press the botton "Esc" ":wq!"
 ![Alt text](images/dockerfile-in-ec2instance.png)
 
 - We repite the step up for our index.html 
