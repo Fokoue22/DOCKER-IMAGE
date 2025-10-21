@@ -115,7 +115,7 @@ sudo su - ec2-user
 
 ![Alt text](images/website-view.png)
 
-### 7. Now let share our docker image to Docker Hub 
+### 8. Now let share our docker image to Docker Hub 
 - First thing we need to login into our docker hub account with our user name and password. 
 ```
  docker login
@@ -139,7 +139,7 @@ sudo su - ec2-user
 
 - Let view the push in our Docker Hub    
 
-![Alt text](images/docker-push.png)
+![Alt text](images/DockerHub.png)
 
 ## Author
 FOKOUE THOMAS
