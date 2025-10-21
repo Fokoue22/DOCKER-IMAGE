@@ -73,7 +73,18 @@ sudo su - ec2-user
 
 ### 4. We need to write our Dockefile that will be use during the build stage. 
 - The file have been created and must always have the name "Dockerfile"
-![Alt text](images/hello-world-image.png)
+![Alt text](images/Dockerfile.png)
+
+- Then we place the dockerfile created in our linux server 
+```
+ vim Dockerfile
+```
+```
+ cat Dockerfile
+```
+#### When you run the "vim" command above first thing to do is to press the "i" for insert. After deleting and pasting the pub-key you press the botton "Esc" ":wq!"
+![Alt text](images/dockerfile-in-ec2instance.png)
+
 
 ### 4. After writing our Dockerfile use the syntax below that will allow us to build an image based on our Dockerfile
 

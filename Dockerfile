@@ -20,7 +20,7 @@ EXPOSE 80
 # systemctl start httpd
 ENTRYPOINT ["/usr/sbin/httpd"]
 
-# systemctl enable httpd
+# systemctl enable httpd keep the container running in the background. like running the conatiner in detache mood
 # /usr/sbin/httpd -D FOREGROUND
 CMD ["-D", "FOREGROUND"]
 
