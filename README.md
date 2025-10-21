@@ -64,7 +64,6 @@ sudo su - ec2-user
 ```
  docker ps
 ```
-![Alt text](images/ansible-playbook.png)
 #### Nothing is been showing after runing the command docker ps because container a effermero. So we need to use the command below to be able to see or specified the port to keep the conatiner up at all time
 ```
  docker ps -a
@@ -140,6 +139,15 @@ sudo su - ec2-user
 - Let view the push in our Docker Hub    
 
 ![Alt text](images/DockerHub.png)
+
+### 9. If you want to use this image just type the command below 
+```
+ docker pull fokoue/linux_apache:v1
+```
+```
+ docker run -t -d -p 80:80 linux_apache:v1
+```
+#### After this use your public IP to view the contain of that image
 
 ## Author
 FOKOUE THOMAS
