@@ -69,43 +69,8 @@ sudo su - ec2-user
 ```
  docker ps -a
 ```
-![Alt text](images/ansible-playbook.png)
+![Alt text](images/hello-world-image.png)
 
-- Then you run the command below to for ansible to run your playbook 
-```
- ansible-playbook ansible-playbook-project1.yml
-```
-![Alt text](images/playbook-1.png)
-![Alt text](images/playbook-2.png)
-
-
-### 9. Connect to linux-node1 i.e. “ansible-linux-node1” and verify that index.html file is written in /var/www/html
-```
- ls /var/www/html/
-```
-```
- cat /var/www/html/index.html
-```
-![Alt text](images/linux-verify-html.png)
-
-
-### 10. Connect to ubuntu nodes i.e. “ubuntu-node” and verify that index.html file is written in /var/www/html
-
-![Alt text](images/ubuntu-verify-html.png)
-
-
-### 11. Verify GIT is installed in both linux and ubuntu nodes:
-```
- git --version
-```
-![Alt text](images/linux-verify-git.png)
-
-![Alt text](images/ubuntu-verify-git.png)
-
-
-### 12. Use your "Public IPv4 address" to see the content of your html file 
-
-![Alt text](images/webpage.png)
 
 ## Author
 FOKOUE THOMAS
