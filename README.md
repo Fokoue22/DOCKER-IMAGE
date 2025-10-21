@@ -71,6 +71,31 @@ sudo su - ec2-user
 ```
 ![Alt text](images/hello-world-image.png)
 
+### 4. We need to write our Dockefile that will be use during the build stage. 
+- The file have been created and must always have the name "Dockerfile"
+![Alt text](images/hello-world-image.png)
+
+### 4. After writing our Dockerfile use the syntax below that will allow us to build an image based on our Dockerfile
+
+```
+ docker build PATH -t image_tag:image_version
+```
+### 4. Here we are going to create a container base on our "image" and start that container 
+#### We are running and application that is inside the conatainer, we are not directly running the application reason for us to create a port were we can asses our application externaly. "The port need to be outside and inside of the container. So we use "-p(for port) the first 80(for inside) and the other 80(for outside)"
+```
+ docker run -t -i -p 80:80 image_tag:image_version
+```
+### 4. 
+```
+ docker run -t -i p 80:80 image_tag:image_version
+```
+
+
+
+
+
+
+
 
 ## Author
 FOKOUE THOMAS
