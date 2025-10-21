@@ -25,13 +25,34 @@ sudo su - ec2-user
  docker --version
 ```
 - After the verification we notice docker is not install. So we need to go to the officail documentation [this page](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-docker.html) depending on our OS we follow the steps and install. For us is Installing Docker on Linux 
+#### 1. Update the installed packages and package cache on your instance.
 ```
-sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
+ sudo yum update -y
 ```
-![Alt text](images/ansible-install.png)
+#### 2. Install the most recent Docker Community Edition package
+```
+ sudo yum install -y docker
+```
+#### 3. Start the Docker service.
+```
+ sudo service docker start
+```
+#### 4. Add the ec2-user to the docker group so that you can run Docker commands without using sudo.
+```
+ sudo usermod -a -G docker ec2-user
+```
+#### 5. This command keep our docker up at all time. No matter if our instance is stop docker will still be active in this server. 
+```
+ sudo systemctl enable docker
+```
+#### 6. Verify that the ec2-user can run Docker commands without using sudo.
+
+```
+ docker ps
+```
+
+![Alt text](images/docker-install-1.png)
+![Alt text](images/docker-install-2.png)
 
 - Take up you privilage. the first command for ubuntu and the second for linux. 
 ```
