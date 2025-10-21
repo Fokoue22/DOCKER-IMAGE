@@ -1,1 +1,222 @@
-Hey, this is my first sample website for docker
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Name — Modern Static Template</title>
+  <meta name="description" content="A clean, responsive static site template for quick projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f172a;           /* page background */
+      --panel:#0b1224;         /* card background */
+      --text: #e5e7eb;         /* body text */
+      --muted:#a3aed0;         /* secondary text */
+      --brand:#7c3aed;         /* primary brand color */
+      --brand-2:#22d3ee;       /* accent */
+      --ring: rgba(124,58,237,.35);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text); background: radial-gradient(1200px 500px at 80% -20%, rgba(124,58,237,.25), transparent 60%),
+                         radial-gradient(900px 400px at 10% -10%, rgba(34,211,238,.15), transparent 60%),
+                         var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin-inline:auto; padding:24px}
+    .flex{display:flex} .center{align-items:center; justify-content:center}
+    .btn{display:inline-flex; gap:.6rem; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:12px; font-weight:600; border:1px solid transparent; transition:.2s}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#071018; box-shadow:0 10px 24px rgba(124,58,237,.35)}
+    .btn-primary:focus,.btn-primary:hover{transform:translateY(-1px); box-shadow:0 14px 30px rgba(124,58,237,.45)}
+    .btn-ghost{border-color:#263453; color:var(--text); background:transparent}
+    .btn-ghost:hover{background:#0d1a36}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); background:linear-gradient(180deg, rgba(8,14,32,.9), rgba(8,14,32,.6)); border-bottom:1px solid #182444}
+    .nav{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:.7rem; font-weight:700}
+    .brand__logo{width:36px; height:36px; border-radius:9px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 8px 20px var(--ring)}
+    .nav__links{display:flex; gap:1rem}
+    .nav__links a{padding:.6rem .8rem; color:var(--muted); border-radius:10px}
+    .nav__links a:hover{background:#0d1a36; color:var(--text)}
+    .nav__menu{display:none}
+
+    /* Hero */
+    .hero{padding:72px 0 48px}
+    .hero__grid{display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center}
+    .hero h1{font-size:clamp(2rem,5vw,3rem); line-height:1.1; margin:0 0 12px}
+    .hero p{color:var(--muted); margin:0 0 24px; max-width:48ch}
+    .hero__card{background:linear-gradient(180deg,#0a1228,#0a132a); border:1px solid #182444; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+    .hero__tag{display:inline-flex; gap:.4rem; align-items:center; padding:.35rem .6rem; border-radius:999px; background:rgba(124,58,237,.15); color:#d9ccff; font-weight:600; border:1px solid rgba(124,58,237,.35); margin-bottom:10px}
+
+    /* Features */
+    .section{padding:56px 0}
+    .section h2{font-size:clamp(1.6rem,3.5vw,2.2rem); margin:0 0 12px}
+    .section p.lead{color:var(--muted); max-width:60ch}
+    .cards{margin-top:28px; display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--panel); border:1px solid #182444; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); transition:.2s}
+    .card:hover{transform:translateY(-2px)}
+    .card h3{margin:0 0 6px; font-size:1.1rem}
+    .kpi{font-weight:700; color:#e9e8ff}
+
+    /* CTA */
+    .cta{background:linear-gradient(135deg, rgba(124,58,237,.15), rgba(34,211,238,.12)); border:1px solid #243154; border-radius:20px; padding:28px; display:flex; align-items:center; justify-content:space-between; gap:16px}
+
+    /* Footer */
+    footer{border-top:1px solid #182444; color:var(--muted); padding:28px 0 60px}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero__grid{grid-template-columns:1fr;}
+      .cards{grid-template-columns:1fr 1fr}
+      .nav__links{display:none}
+      .nav__menu{display:inline-flex}
+    }
+    @media (max-width: 620px){
+      .cards{grid-template-columns:1fr}
+      .cta{flex-direction:column; align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span>FokoueThomas</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn btn-ghost nav__menu" id="openMenu" aria-label="Open menu">Menu</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="hero__tag">✨ Ready-to-use static template</span>
+        <h1>Static website on AMAZON S3 Bucket <br/>Deplpoy using CI/CD pipeline</h1>
+        <p>Clean structure, accessible components, and elegant styling. Replace the content and ship your landing, docs, or portfolio in minutes.</p>
+        <div class="flex" style="gap:12px; margin-top:14px">
+          <a class="btn btn-primary" href="#contact">Get Started</a>
+          <a class="btn btn-ghost" href="#features">See Features</a>
+        </div>
+      </div>
+      <div class="hero__card" role="img" aria-label="Preview card">
+        <h3 style="margin:0 0 8px">Quick facts</h3>
+        <ul style="margin:0; padding-left:18px; color:var(--muted); line-height:1.7">
+          <li>Responsive layout & semantic HTML</li>
+          <li>Single file — easy to host on S3/CloudFront or any static host</li>
+          <li>Customizable with CSS variables</li>
+          <li>No external JS frameworks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2>Features that matter</h2>
+      <p class="lead">Everything you need to launch a clean, fast, and professional static website.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Accessible</h3>
+          <p>Landmarks, contrasts, and focus states are baked in. Good for users and SEO.</p>
+        </article>
+        <article class="card">
+          <h3>Performant</h3>
+          <p>No frameworks, minimal CSS, and optimized fonts so your site feels instant.</p>
+        </article>
+        <article class="card">
+          <h3>Customizable</h3>
+          <p>Tweak brand colors and radii via <span class="kpi">CSS variables</span>—no build step.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Content -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About this template</h2>
+      <p class="lead">Use this as a landing page, product pitch, portfolio, or documentation home. Replace text and links; keep the structure.</p>
+      <div class="cta" style="margin-top:22px">
+        <div>
+          <h3 style="margin:0 0 6px">Deploy anywhere</h3>
+          <p style="margin:0; color:var(--muted)">Host on S3 + CloudFront, GitHub Pages, Netlify, or Vercel. It’s just HTML/CSS.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">This form is static. Wire it to your backend/API or a form service when ready.</p>
+      <form class="card" style="max-width:680px">
+        <div style="display:grid; gap:14px; grid-template-columns:1fr 1fr">
+          <label>First name<br>
+            <input required name="first" class="input" placeholder="Your first name" />
+          </label>
+          <label>Last name<br>
+            <input required name="last" class="input" placeholder="Your last name" />
+          </label>
+          <label style="grid-column:1/-1">Email<br>
+            <input required type="email" name="email" class="input" placeholder="you@domain.com" />
+          </label>
+          <label style="grid-column:1/-1">Message<br>
+            <textarea required name="message" class="input" rows="5" placeholder="Tell us about your project"></textarea>
+          </label>
+        </div>
+        <div style="margin-top:12px; display:flex; gap:10px">
+          <button class="btn btn-primary" type="submit">Send</button>
+          <button class="btn btn-ghost" type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <span>© <span id="year"></span> FokoueThomas. All rights reserved.</span>
+      <div style="display:flex; gap:14px">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Docs</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* simple form controls */
+    .input{width:100%; margin-top:.35rem; padding:.8rem 1rem; border-radius:12px; border:1px solid #223055; background:#0a132a; color:var(--text); outline:none}
+    .input:focus{border-color:var(--brand); box-shadow:0 0 0 4px var(--ring)}
+  </style>
+
+  <script>
+    // small niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // basic mobile menu toggle (optional)
+    const menuBtn = document.getElementById('openMenu');
+    menuBtn?.addEventListener('click', () => {
+      const nav = document.querySelector('.nav__links');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
