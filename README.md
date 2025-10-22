@@ -1,5 +1,3 @@
-# DOCKER-IMAGE
-
 # 🐳 Dockerized Web Application 
 This project demonstrates how to package and deploy a web application using Docker for consistent and reliable deployment across any operating system.
 
